@@ -5,6 +5,27 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Practice2019", "Practice2019\Practice2019.dtproj", "{6EEE50E9-44E5-4825-9AA8-C5D242B14F3F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{B80084F0-0C57-4A17-9BA1-365FCD4EEDE5}"
+	ProjectSection(SolutionItems) = preProject
+		Files\Customer.accdb = Files\Customer.accdb
+		Files\Customer.csv = Files\Customer.csv
+		Files\Customer.mdb = Files\Customer.mdb
+		Files\Customer.xls = Files\Customer.xls
+		Files\Customer.xlsx = Files\Customer.xlsx
+		Files\CustomerByState.xlsx = Files\CustomerByState.xlsx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkBooks", "WorkBooks", "{2114B038-5819-49D9-B9D6-179B6D619F41}"
+	ProjectSection(SolutionItems) = preProject
+		Files\CustomerWorkBooks\Alexandria.xlsx = Files\CustomerWorkBooks\Alexandria.xlsx
+		Files\CustomerWorkBooks\Baton Rouge.xlsx = Files\CustomerWorkBooks\Baton Rouge.xlsx
+		Files\CustomerWorkBooks\Lafayette.xlsx = Files\CustomerWorkBooks\Lafayette.xlsx
+		Files\CustomerWorkBooks\Lake Charles.xlsx = Files\CustomerWorkBooks\Lake Charles.xlsx
+		Files\CustomerWorkBooks\Monroe.xlsx = Files\CustomerWorkBooks\Monroe.xlsx
+		Files\CustomerWorkBooks\New Orleans.xlsx = Files\CustomerWorkBooks\New Orleans.xlsx
+		Files\CustomerWorkBooks\Shreveport.xlsx = Files\CustomerWorkBooks\Shreveport.xlsx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -15,6 +36,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2114B038-5819-49D9-B9D6-179B6D619F41} = {B80084F0-0C57-4A17-9BA1-365FCD4EEDE5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {753B8316-51DD-4749-8119-582212EA4D7C}

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/10/2020 2:29:05 PM"
@@ -11,9 +11,1391 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionGUID="{B388A547-1C3A-4502-93BC-9575E93BBC13}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{9C3E4C27-8F83-43A0-8D87-268928BAB2E1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\Customer.accdb.admin]"
+      DTS:CreationName="ADO.NET:System.Data.OleDb.OleDbConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{5C6F8D35-8544-4E8E-80EE-9EE8179D3C72}"
+      DTS:ObjectName="C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\Customer.accdb.admin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\Customer.accdb;User ID=admin;Provider=Microsoft.ACE.OLEDB.16.0;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import Table Customer_Accdb"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2403021A-7A52-4497-ABE6-AF1D218CA648}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Table Customer_Accdb"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferMaxRows="100000"
+          defaultBufferSize="150000000"
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Table Customer_Accdb\ADO NET Source"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Customer</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Table Customer_Accdb\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\Customer.accdb.admin]"
+                  connectionManagerRefId="Package.ConnectionManagers[C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\Customer.accdb.admin]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ID]"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[SSN]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[SSN]"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[SSN]"
+                      name="SSN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[FName]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[FName]"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[FName]"
+                      name="FName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[LName]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[LName]"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[LName]"
+                      name="LName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[Addr]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Addr]"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[Addr]"
+                      name="Addr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[City]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[City]"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[State]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[State]"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[Zip]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Zip]"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[Zip]"
+                      name="Zip"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[HomePhone]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[HomePhone]"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[HomePhone]"
+                      name="HomePhone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[AltPhone]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[AltPhone]"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[AltPhone]"
+                      name="AltPhone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[DOB]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[DOB]"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[DOB]"
+                      name="DOB"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[SSN]"
+                      dataType="nText"
+                      name="SSN" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[FName]"
+                      dataType="nText"
+                      name="FName" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[LName]"
+                      dataType="nText"
+                      name="LName" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Addr]"
+                      dataType="nText"
+                      name="Addr" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[City]"
+                      dataType="nText"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[State]"
+                      dataType="nText"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Zip]"
+                      dataType="nText"
+                      name="Zip" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[HomePhone]"
+                      dataType="nText"
+                      name="HomePhone" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[AltPhone]"
+                      dataType="nText"
+                      name="AltPhone" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[DOB]"
+                      dataType="dbTimeStamp"
+                      name="DOB" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ID]"
+                      dataType="i4"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ID]"
+                      name="ID" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SSN]"
+                      dataType="nText"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SSN]"
+                      name="SSN" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[FName]"
+                      dataType="nText"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[FName]"
+                      name="FName" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[LName]"
+                      dataType="nText"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[LName]"
+                      name="LName" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Addr]"
+                      dataType="nText"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Addr]"
+                      name="Addr" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[City]"
+                      dataType="nText"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[State]"
+                      dataType="nText"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[State]"
+                      name="State" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Zip]"
+                      dataType="nText"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Zip]"
+                      name="Zip" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[HomePhone]"
+                      dataType="nText"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[HomePhone]"
+                      name="HomePhone" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[AltPhone]"
+                      dataType="nText"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[AltPhone]"
+                      name="AltPhone" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[DOB]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[DOB]"
+                      name="DOB" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convert DT_NTEXT to DT_WSTR"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Inputs[Data Conversion Input].Columns[SSN]"
+                      cachedDataType="nText"
+                      cachedName="SSN"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[SSN]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Inputs[Data Conversion Input].Columns[FName]"
+                      cachedDataType="nText"
+                      cachedName="FName"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[FName]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Inputs[Data Conversion Input].Columns[LName]"
+                      cachedDataType="nText"
+                      cachedName="LName"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[LName]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Inputs[Data Conversion Input].Columns[Addr]"
+                      cachedDataType="nText"
+                      cachedName="Addr"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[Addr]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Inputs[Data Conversion Input].Columns[City]"
+                      cachedDataType="nText"
+                      cachedName="City"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Inputs[Data Conversion Input].Columns[State]"
+                      cachedDataType="nText"
+                      cachedName="State"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Inputs[Data Conversion Input].Columns[Zip]"
+                      cachedDataType="nText"
+                      cachedName="Zip"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[Zip]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Inputs[Data Conversion Input].Columns[HomePhone]"
+                      cachedDataType="nText"
+                      cachedName="HomePhone"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[HomePhone]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Inputs[Data Conversion Input].Columns[AltPhone]"
+                      cachedDataType="nText"
+                      cachedName="AltPhone"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[AltPhone]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[SSN]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[SSN]"
+                      name="SSN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[SSN]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[FName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[FName]"
+                      name="FName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[FName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[LName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[LName]"
+                      name="LName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[LName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[Addr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[Addr]"
+                      name="Addr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[Addr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[City]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[State]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[State]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[Zip]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[Zip]"
+                      name="Zip"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[Zip]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[HomePhone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[HomePhone]"
+                      name="HomePhone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[HomePhone]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[AltPhone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[AltPhone]"
+                      name="AltPhone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[AltPhone]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convert DT_WSTR to DT_STR"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[SSN]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SSN"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[SSN]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[FName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FName"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[FName]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[LName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LName"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[LName]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[Addr]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Addr"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[Addr]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="City"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="State"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[Zip]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Zip"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[Zip]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[HomePhone]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="HomePhone"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[HomePhone]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[AltPhone]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AltPhone"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[AltPhone]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[SSN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[SSN]"
+                      name="SSN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[SSN]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[FName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[FName]"
+                      name="FName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[FName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[LName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[LName]"
+                      name="LName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[LName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[Addr]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[Addr]"
+                      name="Addr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[Addr]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[City]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[State]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[Zip]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[Zip]"
+                      name="Zip"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[Zip]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[HomePhone]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[HomePhone]"
+                      name="HomePhone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[HomePhone]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[AltPhone]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[AltPhone]"
+                      name="AltPhone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output].Columns[AltPhone]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Table Customer_Accdb\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Customer_Accdb]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Table Customer_Accdb\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{84797F58-0282-4A38-9853-FED7F00CAB3E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.Practice2019]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID]"
+                      cachedDataType="i4"
+                      cachedName="ID"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DOB]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DOB"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DOB]"
+                      lineageId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output].Columns[DOB]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SSN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SSN"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SSN]"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[SSN]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FName"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FName]"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[FName]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LName"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LName]"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[LName]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Addr]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Addr"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Addr]"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[Addr]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[State]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HomePhone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HomePhone"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomePhone]"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[HomePhone]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Zip]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Zip"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Zip]"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[Zip]" />
+                    <inputColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AltPhone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AltPhone"
+                      externalMetadataColumnId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AltPhone]"
+                      lineageId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output].Columns[AltPhone]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SSN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SSN" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FName" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LName" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Addr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Addr" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Zip]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Zip" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HomePhone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HomePhone" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AltPhone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AltPhone" />
+                    <externalMetadataColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DOB]"
+                      dataType="dbTimeStamp"
+                      name="DOB" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Table Customer_Accdb\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Table Customer_Accdb\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Table Customer_Accdb\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Table Customer_Accdb\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Table Customer_Accdb.Paths[ADO NET Source Output]"
+              endId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Inputs[Data Conversion Input]"
+              name="ADO NET Source Output"
+              startId="Package\Import Table Customer_Accdb\ADO NET Source.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Import Table Customer_Accdb.Paths[Data Conversion Output]"
+              endId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Inputs[Data Conversion Input]"
+              name="Data Conversion Output"
+              startId="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Import Table Customer_Accdb.Paths[Data Conversion Output1]"
+              endId="Package\Import Table Customer_Accdb\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR.Outputs[Data Conversion Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table Customer_Accdb"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{2ECAC45F-A534-4FE8-A070-191DD627001C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table Customer_Accdb"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{84797F58-0282-4A38-9853-FED7F00CAB3E}"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Customer_Accdb')&#xA;BEGIN&#xA;&#x9;TRUNCATE TABLE Customer_Accdb&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{F35ACFFC-C981-4390-91D9-707AD6955570}"
+      DTS:From="Package\Truncate Table Customer_Accdb"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import Table Customer_Accdb" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Import Table Customer_Accdb"
+          TopLeft="316,145" />
+        <NodeLayout
+          Size="240,42"
+          Id="Package\Truncate Table Customer_Accdb"
+          TopLeft="303,32" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="426.5,74">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71"
+              Start="0,0"
+              End="0,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import Table Customer_Accdb">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="245,42"
+          Id="Package\Import Table Customer_Accdb\Convert DT_NTEXT to DT_WSTR"
+          TopLeft="394,124" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Import Table Customer_Accdb\OLE DB Destination"
+          TopLeft="499,287" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Import Table Customer_Accdb\ADO NET Source"
+          TopLeft="373,35" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\Import Table Customer_Accdb\Convert DT_WSTR to DT_STR"
+          TopLeft="452,199" />
+        <EdgeLayout
+          Id="Package\Import Table Customer_Accdb.Paths[Data Conversion Output1]"
+          TopLeft="567.5,241">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20,46"
+              Start="0,0"
+              End="20,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19"
+                    Point2="0,23"
+                    Point3="4,23" />
+                  <mssgle:LineSegment
+                    End="16,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16,23"
+                    Point2="20,23"
+                    Point3="20,27" />
+                  <mssgle:LineSegment
+                    End="20,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Table Customer_Accdb.Paths[Data Conversion Output]"
+          TopLeft="516.5,166">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51,33"
+              Start="0,0"
+              End="51,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.5"
+                    Point2="0,16.5"
+                    Point3="4,16.5" />
+                  <mssgle:LineSegment
+                    End="47,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47,16.5"
+                    Point2="51,16.5"
+                    Point3="51,20.5" />
+                  <mssgle:LineSegment
+                    End="51,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Table Customer_Accdb.Paths[ADO NET Source Output]"
+          TopLeft="456,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.5,47"
+              Start="0,0"
+              End="60.5,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="4,23.5" />
+                  <mssgle:LineSegment
+                    End="56.5,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.5,23.5"
+                    Point2="60.5,23.5"
+                    Point3="60.5,27.5" />
+                  <mssgle:LineSegment
+                    End="60.5,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Table Customer_Accdb\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Table Customer_Accdb\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

@@ -26,13 +26,14 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-EJJTAUO</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfU21PaJtUEuFF1PRHXxcNgAAAAACAAAAAAAQZgAAAAEAACAAAAAiJleSrAmZNTBfuMtrIzrR2br176dsjCBc7KWTGkVxCgAAAAAOgAAAAAIAACAAAAB1BAP+Tfw3THISj6U/1Mcy/VOz80NjgUZ2QCoiJnzrD5AAAABbb7tVKWKbzTleVrP/zMInjcVjzeA6diTrDmAamcfOe1ImEGenqVGNh8TjXx0p0R4fTLLtfV6IVaS/GAhdr8TcJfGJDwtlMWPe0taL1ItjEpwOzBky692JE8wbk/lmgM5ej4OpPHVacO94F9gT2GtVAtbOx0A1qgLORxapwW0HhNaslNEiFpzLCLi8UiWmx+tAAAAAc3bqXVukaVZkyjPOws84OksQ58l8+oZ5HZMRGTovnqHFREp5Px86G7xNAnHaxNR7DFcLsGJQIEFhOz7sHxfkiw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfU21PaJtUEuFF1PRHXxcNgAAAAACAAAAAAAQZgAAAAEAACAAAAAG6A5YbkRXaRV6DrZG/WD2Lu7WNU/RJJvlQdgP7/WU6AAAAAAOgAAAAAIAACAAAADPg3Rhr4Z/n1HBk3BudzBCxG/sGOewt5r/LR7BnjZCLJAAAACe2mjyibhTS29eDniVPKWw6XxcpYBrncm1zt4dNqLszFBV4Ge3Dztr6LBP0h4L0E4ThhzMmikoxAgQ22HNufcDttIZEq1/lQFR6hvLGFruZWNkta1m6grbPbGHSxbQQGK+s/uicKzXfCG5DIO6WF8GgiQgxWBDzegmIipl2kbx6eCRqS6QhAeFBDADxEbTCLVAAAAAFSZzr9MHVHpOSalUYXFxt+NlMmA4WWfkQSlE/Za7NqJlp2H1Z8+tLrE+HJSpeoo1wk+Uk8/1DomsgcF84LIiDA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Lookup.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="InsertFactInternetSales.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Accdb-One.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Mdb_One.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="LocalHost.AdventureWorksDW2017.conmgr" />
@@ -432,6 +433,23 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Mdb_One.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{9C48A379-00E0-4188-A84F-E280A5894E9F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B6FB7B45-6E93-40FF-9BE9-D54D9C30AD3D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>

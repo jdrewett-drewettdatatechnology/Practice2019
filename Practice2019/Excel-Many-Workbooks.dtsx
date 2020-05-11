@@ -12,22 +12,19 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{C414626D-4721-4D46-AFFF-D3CEA32689D7}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{7214382C-02DC-480C-B85E-F137D65624F1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{2DDF3D83-2782-48F7-95DD-AACBD265FB65}"
-      DTS:ObjectName="Excel Connection Manager">
-      <DTS:PropertyExpression
-        DTS:Name="ConnectionString">"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="
-+@[User::FileName]+";Extended Properties=\"Excel 12.0 XML;HDR=YES\";"</DTS:PropertyExpression>
+      DTS:refId="Package.ConnectionManagers[C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\CustomerByState.xlsx]"
+      DTS:CreationName="ADO.NET:OLEDB"
+      DTS:DTSID="{C6C2DE4E-46F6-4364-B02E-8ADD4C285143}"
+      DTS:ObjectName="C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\CustomerByState.xlsx">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Alexandria.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Data Source=C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\CustomerByState.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=Excel 12.0;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -52,20 +49,13 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Foreach Loop Container">
       <DTS:ForEachEnumerator
-        DTS:CreationName="Microsoft.ForEachFileEnumerator"
-        DTS:DTSID="{3E63E8CC-E842-4419-B242-5C6E7DA7DC23}"
-        DTS:ObjectName="{3E63E8CC-E842-4419-B242-5C6E7DA7DC23}">
+        DTS:CreationName="Microsoft.ForEachSchemaRowsetEnumerator"
+        DTS:DTSID="{FADE1D93-14EC-48D6-ABCB-3029DFC9579B}"
+        DTS:ObjectName="{FADE1D93-14EC-48D6-ABCB-3029DFC9579B}">
         <DTS:ObjectData>
-          <ForEachFileEnumeratorProperties>
-            <FEFEProperty
-              Folder="C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\CustomerWorkBooks" />
-            <FEFEProperty
-              FileSpec="*.xlsx" />
-            <FEFEProperty
-              FileNameRetrievalType="0" />
-            <FEFEProperty
-              Recurse="0" />
-          </ForEachFileEnumeratorProperties>
+          <FEESchemaRowset
+            Connection="C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\CustomerByState.xlsx"
+            Schema="c8b52229-5cf3-11ce-ade5-00aa0044773d" />
         </DTS:ObjectData>
       </DTS:ForEachEnumerator>
       <DTS:Variables />
@@ -484,8 +474,8 @@
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\Import spreadsheets contained in the directory\Get the data from the current spreadsheet.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerID="{2DDF3D83-2782-48F7-95DD-AACBD265FB65}:invalid"
+                      connectionManagerRefId="{2DDF3D83-2782-48F7-95DD-AACBD265FB65}:invalid"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1021,8 +1011,8 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{ED831752-6ADC-4221-AD42-46179FAAC089}"
-          DTS:ObjectName="{ED831752-6ADC-4221-AD42-46179FAAC089}"
+          DTS:DTSID="{05FB3E47-9661-492D-8002-8243ECC8C018}"
+          DTS:ObjectName="{05FB3E47-9661-492D-8002-8243ECC8C018}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FileName" />
       </DTS:ForEachVariableMappings>

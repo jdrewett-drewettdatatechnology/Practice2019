@@ -1,0 +1,212 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/12/2020 11:18:05 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-EJJTAUO"
+  DTS:CreatorName="DESKTOP-EJJTAUO\jdrewett"
+  DTS:DTSID="{AEC9F0F0-743C-4543-847F-1E82A8671204}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.94"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{50D8389C-702A-4C9A-9F05-798A977A0FCB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C93274CB-0C26-41C6-A65C-1A49AD6318AA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Execute SQL Task.EventHandlers[OnError]"
+          DTS:CreationName="OnError"
+          DTS:DTSID="{9BA6E84C-7829-44D5-AA74-1BC20D7AAF6F}"
+          DTS:EventID="1076494336"
+          DTS:EventName="OnError"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{2278A0EF-4654-45CF-BF55-5FA6CAFAB6AF}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Execute SQL Task.EventHandlers[OnError]\Execute SQL Task"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{24DDB6C8-9569-4185-89C6-64F2E6783FE7}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Execute SQL Task"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="SqlStatementSource">"INSERT INTO [SSISDB].[dbo].[ErrorLog]
+(
+	[PackageName],
+	[PackageID],
+	[TaskName],
+	[ErrorCode],
+	[ErrorMsg],
+	[PackageDuration],
+	[ContainerDuration],
+	[EmailSubject],
+	[EmailRecipients]
+)
+VALUES
+(" + 
+	"'" + @[System::PackageName] + "'," + 
+	"'" + @[System::PackageID]   + "'," + 
+	"'" + @[System::SourceName]  + "'," + 
+	(DT_STR, 15, 1252) @[System::ErrorCode] + "," + 
+	"'" + @[System::ErrorDescription]  + "'," + 
+	(DT_STR,6, 1252) DATEDIFF("ss", @[System::StartTime] ,GETDATE()) + "," + 
+	(DT_STR,6, 1252) DATEDIFF("ss", @[System::ContainerStartTime] ,GETDATE()) + "," + 
+	"'SSIS Package Error'," + 
+	"'jdrewett@drewettdatatechnology.com'" +
+")"</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{0B1EAF11-78AB-4A49-A072-2D108C7FB587}"
+                  SQLTask:SqlStatementSource="INSERT INTO [SSISDB].[dbo].[ErrorLog]&#xA;(&#xA;&#x9;[PackageName],&#xA;&#x9;[PackageID],&#xA;&#x9;[TaskName],&#xA;&#x9;[ErrorCode],&#xA;&#x9;[ErrorMsg],&#xA;&#x9;[PackageDuration],&#xA;&#x9;[ContainerDuration],&#xA;&#x9;[EmailSubject],&#xA;&#x9;[EmailRecipients]&#xA;)&#xA;VALUES&#xA;('Package1','{AEC9F0F0-743C-4543-847F-1E82A8671204}','',0,'',1366,322,'SSIS Package Error','jdrewett@drewettdatatechnology.com')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{84797F58-0282-4A38-9853-FED7F00CAB3E}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE xxx" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{95A81C13-EB08-4C94-825B-07774AE66F2A}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{493E43B6-8B70-46E9-AFCF-5E50CC08F668}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{96DC2005-2DD7-437D-8BB4-F97C63B95AD0}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"INSERT INTO [SSIS].[dbo].[ErrorLog]
+(
+	[PackageName],
+	[PackageID],
+	[TaskName],
+	[ErrorCode],
+	[ErrorMsg],
+	[PackageDuration],
+	[ContainerDuration],
+	[EmailSubject],
+	[EmailRecipients]
+)
+VALUES
+(" + 
+	"'" + @[System::PackageName] + "'," + 
+	"'" + @[System::PackageID]   + "'," + 
+	"'" + @[System::SourceName]  + "'," + 
+	(DT_STR, 15, 1252) @[System::ErrorCode] + "," + 
+	"'" + @[System::ErrorDescription]  + "'," + 
+	(DT_STR,6, 1252) DATEDIFF("ss", @[System::StartTime] ,GETDATE()) + "," + 
+	(DT_STR,6, 1252) DATEDIFF("ss", @[System::ContainerStartTime] ,GETDATE()) + "," + 
+	"'SSIS Package Error'," + 
+	"'jdrewett@drewettdatatechnology.com'" +
+")"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{2C6637FA-ABC4-4720-8048-89E2517E96C0}"
+              SQLTask:SqlStatementSource="INSERT INTO [SSIS].[dbo].[ErrorLog]&#xA;(&#xA;&#x9;[PackageName],&#xA;&#x9;[PackageID],&#xA;&#x9;[TaskName],&#xA;&#x9;[ErrorCode],&#xA;&#x9;[ErrorMsg],&#xA;&#x9;[PackageDuration],&#xA;&#x9;[ContainerDuration],&#xA;&#x9;[EmailSubject],&#xA;&#x9;[EmailRecipients]&#xA;)&#xA;VALUES&#xA;('Package1','{AEC9F0F0-743C-4543-847F-1E82A8671204}','',0,'',1366,1351,'SSIS Package Error','jdrewett@drewettdatatechnology.com')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="294,77" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package.EventHandlers[OnError]\Execute SQL Task"
+          TopLeft="341,86" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Execute SQL Task.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Execute SQL Task.EventHandlers[OnError]\Execute SQL Task"
+          TopLeft="313,109" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

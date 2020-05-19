@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{818CDD1A-8ECF-4359-9870-B637A428858B}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{72EA938A-6E3F-4AD1-9BAE-E8DA285FF914}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -21,6 +21,16 @@
       DTS:CreationName="ADO.NET:System.Data.OleDb.OleDbConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
       DTS:DTSID="{855C2CD2-ED15-4423-B39C-1E272A50E256}"
       DTS:ObjectName="Customer">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\Customer.mdb;User ID=admin;Provider=Microsoft.Jet.OLEDB.4.0;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Customer 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6EFA8386-4DB1-44B1-A5F2-6855B8442FE5}"
+      DTS:ObjectName="Customer 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\Customer.mdb;User ID=admin;Provider=Microsoft.Jet.OLEDB.4.0;" />
@@ -62,55 +72,55 @@
                       cachedDataType="wstr"
                       cachedLength="9"
                       cachedName="SSN"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[SSN]" />
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[SSN]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Customer Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[FName]"
                       cachedDataType="wstr"
                       cachedLength="15"
                       cachedName="FName"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[FName]" />
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[FName]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Customer Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[LName]"
                       cachedDataType="wstr"
                       cachedLength="30"
                       cachedName="LName"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[LName]" />
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[LName]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Customer Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[Addr]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Addr"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[Addr]" />
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[Addr]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Customer Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[City]"
                       cachedDataType="wstr"
                       cachedLength="25"
                       cachedName="City"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[City]" />
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[City]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Customer Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[State]"
                       cachedDataType="wstr"
                       cachedLength="2"
                       cachedName="State"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[State]" />
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[State]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Customer Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[Zip]"
                       cachedDataType="wstr"
                       cachedLength="10"
                       cachedName="Zip"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[Zip]" />
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[Zip]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Customer Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[HomePhone]"
                       cachedDataType="wstr"
                       cachedLength="25"
                       cachedName="HomePhone"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[HomePhone]" />
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[HomePhone]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Customer Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[AltPhone]"
                       cachedDataType="wstr"
                       cachedLength="25"
                       cachedName="AltPhone"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[AltPhone]" />
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[AltPhone]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -137,7 +147,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[SSN]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[SSN]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -159,7 +169,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[FName]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[FName]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -181,7 +191,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[LName]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[LName]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -203,7 +213,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[Addr]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[Addr]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -225,7 +235,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[City]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[City]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -247,7 +257,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[State]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[State]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -269,7 +279,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[Zip]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[Zip]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -291,7 +301,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[HomePhone]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[HomePhone]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -313,7 +323,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[AltPhone]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[AltPhone]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -364,43 +374,43 @@
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Name"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Name]" />
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Name]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Pharmacy Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[Store_No]"
                       cachedDataType="wstr"
                       cachedLength="10"
                       cachedName="Store_No"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Store_No]" />
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Store_No]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Pharmacy Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[Addr]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Addr"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Addr]" />
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Addr]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Pharmacy Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[City]"
                       cachedDataType="wstr"
                       cachedLength="25"
                       cachedName="City"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[City]" />
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[City]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Pharmacy Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[State]"
                       cachedDataType="wstr"
                       cachedLength="2"
                       cachedName="State"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[State]" />
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[State]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Pharmacy Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[Zip]"
                       cachedDataType="wstr"
                       cachedLength="10"
                       cachedName="Zip"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Zip]" />
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Zip]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Pharmacy Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[Phone]"
                       cachedDataType="wstr"
                       cachedLength="25"
                       cachedName="Phone"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Phone]" />
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Phone]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -427,7 +437,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Name]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Name]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -449,7 +459,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Store_No]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Store_No]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -471,7 +481,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Addr]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Addr]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -493,7 +503,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[City]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[City]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -515,7 +525,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[State]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[State]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -537,7 +547,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Zip]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Zip]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -559,7 +569,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Phone]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Phone]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -610,43 +620,43 @@
                       cachedDataType="wstr"
                       cachedLength="9"
                       cachedName="SSN"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[SSN]" />
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[SSN]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Prescription Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[Brand_Name]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Brand_Name"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Brand_Name]" />
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Brand_Name]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Prescription Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[Generic_Name]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Generic_Name"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Generic_Name]" />
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Generic_Name]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Prescription Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[IsGeneric]"
                       cachedDataType="wstr"
                       cachedLength="1"
                       cachedName="IsGeneric"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[IsGeneric]" />
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[IsGeneric]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Prescription Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[Directions]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="Directions"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Directions]" />
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Directions]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Prescription Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[Qty]"
                       cachedDataType="wstr"
                       cachedLength="25"
                       cachedName="Qty"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Qty]" />
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Qty]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Convert Prescription Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input].Columns[Doctor]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Doctor"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Doctor]" />
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Doctor]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -673,7 +683,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[SSN]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[SSN]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -695,7 +705,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Brand_Name]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Brand_Name]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -717,7 +727,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Generic_Name]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Generic_Name]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -739,7 +749,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[IsGeneric]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[IsGeneric]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -761,7 +771,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Directions]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Directions]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -781,7 +791,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Qty]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Qty]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -803,7 +813,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Doctor]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Doctor]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -838,841 +848,311 @@
               </outputs>
             </component>
             <component
-              refId="Package\Import Tables from Access\Get Customer Table"
-              componentClassID="Microsoft.ManagedComponentHost"
-              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
-              name="Get Customer Table"
+              refId="Package\Import Tables from Access\Customer_1"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Customer_1"
               usesDispositions="true"
-              version="4">
+              version="7">
               <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement used by the component to extract data."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">30</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
-                  name="AllowImplicitStringConversion">true</property>
+                  name="CommandTimeout">0</property>
                 <property
                   dataType="System.String"
-                  description="The Source database table name."
-                  expressionType="Notify"
-                  name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Customer</property>
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Customer</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
                 <property
                   dataType="System.Int32"
-                  description="Specify the mode to retrieve external column information"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.String"
-                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Import Tables from Access\Get Customer Table.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Customer]"
-                  connectionManagerRefId="Package.ConnectionManagers[Customer]"
-                  description="Managed connection manager"
-                  name="IDbConnection" />
+                  refId="Package\Import Tables from Access\Customer_1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Customer 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Customer 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output]"
-                  name="ADO NET Source Output">
+                  refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[ID]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[ID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[ID]"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[ID]"
+                      externalMetadataColumnId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[ID]"
                       name="ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[SSN]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[SSN]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[SSN]"
+                      externalMetadataColumnId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[SSN]"
                       length="9"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[SSN]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[SSN]"
                       name="SSN"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[FName]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[FName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[FName]"
+                      externalMetadataColumnId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[FName]"
                       length="15"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[FName]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[FName]"
                       name="FName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[LName]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[LName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[LName]"
+                      externalMetadataColumnId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[LName]"
                       length="30"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[LName]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[LName]"
                       name="LName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[Addr]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[Addr]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[Addr]"
+                      externalMetadataColumnId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[Addr]"
                       length="50"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[Addr]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[Addr]"
                       name="Addr"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[City]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[City]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[City]"
+                      externalMetadataColumnId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[City]"
                       length="25"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[City]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[City]"
                       name="City"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[State]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[State]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[State]"
+                      externalMetadataColumnId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[State]"
                       length="2"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[State]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[State]"
                       name="State"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[Zip]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[Zip]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[Zip]"
+                      externalMetadataColumnId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[Zip]"
                       length="10"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[Zip]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[Zip]"
                       name="Zip"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[HomePhone]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[HomePhone]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[HomePhone]"
+                      externalMetadataColumnId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[HomePhone]"
                       length="25"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[HomePhone]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[HomePhone]"
                       name="HomePhone"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[AltPhone]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[AltPhone]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[AltPhone]"
+                      externalMetadataColumnId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[AltPhone]"
                       length="25"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[AltPhone]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[AltPhone]"
                       name="AltPhone"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[DOB]"
-                      dataType="dbTimeStamp"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[DOB]"
+                      dataType="date"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[DOB]"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[DOB]"
+                      externalMetadataColumnId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[DOB]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[DOB]"
                       name="DOB"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[ID]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[ID]"
                       dataType="i4"
                       name="ID" />
                     <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[SSN]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[SSN]"
                       dataType="wstr"
                       length="9"
                       name="SSN" />
                     <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[FName]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[FName]"
                       dataType="wstr"
                       length="15"
                       name="FName" />
                     <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[LName]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[LName]"
                       dataType="wstr"
                       length="30"
                       name="LName" />
                     <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[Addr]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[Addr]"
                       dataType="wstr"
                       length="50"
                       name="Addr" />
                     <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[City]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[City]"
                       dataType="wstr"
                       length="25"
                       name="City" />
                     <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[State]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[State]"
                       dataType="wstr"
                       length="2"
                       name="State" />
                     <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[Zip]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[Zip]"
                       dataType="wstr"
                       length="10"
                       name="Zip" />
                     <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[HomePhone]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[HomePhone]"
                       dataType="wstr"
                       length="25"
                       name="HomePhone" />
                     <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[AltPhone]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[AltPhone]"
                       dataType="wstr"
                       length="25"
                       name="AltPhone" />
                     <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].ExternalColumns[DOB]"
-                      dataType="dbTimeStamp"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].ExternalColumns[DOB]"
+                      dataType="date"
                       name="DOB" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output]"
+                  refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
-                  name="ADO NET Source Error Output">
+                  name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[ID]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[ID]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      dataType="i4"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[ID]"
                       name="ID" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[SSN]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[SSN]"
                       dataType="wstr"
                       length="9"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[SSN]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[SSN]"
                       name="SSN" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[FName]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[FName]"
                       dataType="wstr"
                       length="15"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[FName]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[FName]"
                       name="FName" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[LName]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[LName]"
                       dataType="wstr"
                       length="30"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[LName]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[LName]"
                       name="LName" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[Addr]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[Addr]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[Addr]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[Addr]"
                       name="Addr" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[City]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[City]"
                       dataType="wstr"
                       length="25"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[City]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[City]"
                       name="City" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[State]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[State]"
                       dataType="wstr"
                       length="2"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[State]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[State]"
                       name="State" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[Zip]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[Zip]"
                       dataType="wstr"
                       length="10"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[Zip]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[Zip]"
                       name="Zip" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[HomePhone]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[HomePhone]"
                       dataType="wstr"
                       length="25"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[HomePhone]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[HomePhone]"
                       name="HomePhone" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[AltPhone]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[AltPhone]"
                       dataType="wstr"
                       length="25"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[AltPhone]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[AltPhone]"
                       name="AltPhone" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[DOB]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[DOB]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[DOB]"
+                      dataType="date"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[DOB]"
                       name="DOB" />
                     <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Import Tables from Access\Get Pharmacy Table"
-              componentClassID="Microsoft.ManagedComponentHost"
-              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
-              name="Get Pharmacy Table"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement used by the component to extract data."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">30</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
-                  name="AllowImplicitStringConversion">true</property>
-                <property
-                  dataType="System.String"
-                  description="The Source database table name."
-                  expressionType="Notify"
-                  name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Pharmacy</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specify the mode to retrieve external column information"
-                  name="AccessMode"
-                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
-                <property
-                  dataType="System.String"
-                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Import Tables from Access\Get Pharmacy Table.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Customer]"
-                  connectionManagerRefId="Package.ConnectionManagers[Customer]"
-                  description="Managed connection manager"
-                  name="IDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output]"
-                  name="ADO NET Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[PharmacyID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[PharmacyID]"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[PharmacyID]"
-                      name="PharmacyID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Name]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[Name]"
-                      length="50"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Name]"
-                      name="Name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Store_No]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[Store_No]"
-                      length="10"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Store_No]"
-                      name="Store_No"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Addr]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[Addr]"
-                      length="50"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Addr]"
-                      name="Addr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[City]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[City]"
-                      length="25"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[City]"
-                      name="City"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[State]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[State]"
-                      length="2"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[State]"
-                      name="State"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Zip]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[Zip]"
-                      length="10"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Zip]"
-                      name="Zip"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Phone]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[Phone]"
-                      length="25"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[Phone]"
-                      name="Phone"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[PharmacyID]"
-                      dataType="i4"
-                      name="PharmacyID" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[Name]"
-                      dataType="wstr"
-                      length="50"
-                      name="Name" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[Store_No]"
-                      dataType="wstr"
-                      length="10"
-                      name="Store_No" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[Addr]"
-                      dataType="wstr"
-                      length="50"
-                      name="Addr" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[City]"
-                      dataType="wstr"
-                      length="25"
-                      name="City" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[State]"
-                      dataType="wstr"
-                      length="2"
-                      name="State" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[Zip]"
-                      dataType="wstr"
-                      length="10"
-                      name="Zip" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].ExternalColumns[Phone]"
-                      dataType="wstr"
-                      length="25"
-                      name="Phone" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output]"
-                  isErrorOut="true"
-                  name="ADO NET Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[PharmacyID]"
-                      dataType="i4"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[PharmacyID]"
-                      name="PharmacyID" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[Name]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[Name]"
-                      name="Name" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[Store_No]"
-                      dataType="wstr"
-                      length="10"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[Store_No]"
-                      name="Store_No" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[Addr]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[Addr]"
-                      name="Addr" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[City]"
-                      dataType="wstr"
-                      length="25"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[City]"
-                      name="City" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[State]"
-                      dataType="wstr"
-                      length="2"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[State]"
-                      name="State" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[Zip]"
-                      dataType="wstr"
-                      length="10"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[Zip]"
-                      name="Zip" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[Phone]"
-                      dataType="wstr"
-                      length="25"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[Phone]"
-                      name="Phone" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Import Tables from Access\Get Prescription Table"
-              componentClassID="Microsoft.ManagedComponentHost"
-              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
-              name="Get Prescription Table"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement used by the component to extract data."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">30</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
-                  name="AllowImplicitStringConversion">true</property>
-                <property
-                  dataType="System.String"
-                  description="The Source database table name."
-                  expressionType="Notify"
-                  name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Prescription</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specify the mode to retrieve external column information"
-                  name="AccessMode"
-                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
-                <property
-                  dataType="System.String"
-                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Import Tables from Access\Get Prescription Table.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Customer]"
-                  connectionManagerRefId="Package.ConnectionManagers[Customer]"
-                  description="Managed connection manager"
-                  name="IDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output]"
-                  name="ADO NET Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[PrescriptionID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[PrescriptionID]"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[PrescriptionID]"
-                      name="PrescriptionID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[SSN]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[SSN]"
-                      length="9"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[SSN]"
-                      name="SSN"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[PharmacyID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[PharmacyID]"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[PharmacyID]"
-                      name="PharmacyID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Date_Filled]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[Date_Filled]"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Date_Filled]"
-                      name="Date_Filled"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Brand_Name]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[Brand_Name]"
-                      length="50"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Brand_Name]"
-                      name="Brand_Name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Generic_Name]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[Generic_Name]"
-                      length="50"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Generic_Name]"
-                      name="Generic_Name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[IsGeneric]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[IsGeneric]"
-                      length="1"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[IsGeneric]"
-                      name="IsGeneric"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Directions]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[Directions]"
-                      length="100"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Directions]"
-                      name="Directions"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Qty]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[Qty]"
-                      length="25"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Qty]"
-                      name="Qty"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[No_of_Refills]"
-                      dataType="i2"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[No_of_Refills]"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[No_of_Refills]"
-                      name="No_of_Refills"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Doctor]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[Doctor]"
-                      length="50"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[Doctor]"
-                      name="Doctor"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[PrescriptionID]"
-                      dataType="i4"
-                      name="PrescriptionID" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[SSN]"
-                      dataType="wstr"
-                      length="9"
-                      name="SSN" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[PharmacyID]"
-                      dataType="i4"
-                      name="PharmacyID" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[Date_Filled]"
-                      dataType="dbTimeStamp"
-                      name="Date_Filled" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[Brand_Name]"
-                      dataType="wstr"
-                      length="50"
-                      name="Brand_Name" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[Generic_Name]"
-                      dataType="wstr"
-                      length="50"
-                      name="Generic_Name" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[IsGeneric]"
-                      dataType="wstr"
-                      length="1"
-                      name="IsGeneric" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[Directions]"
-                      dataType="wstr"
-                      length="100"
-                      name="Directions" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[Qty]"
-                      dataType="wstr"
-                      length="25"
-                      name="Qty" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[No_of_Refills]"
-                      dataType="i2"
-                      name="No_of_Refills" />
-                    <externalMetadataColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].ExternalColumns[Doctor]"
-                      dataType="wstr"
-                      length="50"
-                      name="Doctor" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output]"
-                  isErrorOut="true"
-                  name="ADO NET Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[PrescriptionID]"
-                      dataType="i4"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[PrescriptionID]"
-                      name="PrescriptionID" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[SSN]"
-                      dataType="wstr"
-                      length="9"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[SSN]"
-                      name="SSN" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[PharmacyID]"
-                      dataType="i4"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[PharmacyID]"
-                      name="PharmacyID" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[Date_Filled]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[Date_Filled]"
-                      name="Date_Filled" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[Brand_Name]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[Brand_Name]"
-                      name="Brand_Name" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[Generic_Name]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[Generic_Name]"
-                      name="Generic_Name" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[IsGeneric]"
-                      dataType="wstr"
-                      length="1"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[IsGeneric]"
-                      name="IsGeneric" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[Directions]"
-                      dataType="wstr"
-                      length="100"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[Directions]"
-                      name="Directions" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[Qty]"
-                      dataType="wstr"
-                      length="25"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[Qty]"
-                      name="Qty" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[No_of_Refills]"
-                      dataType="i2"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[No_of_Refills]"
-                      name="No_of_Refills" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[Doctor]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[Doctor]"
-                      name="Doctor" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1757,13 +1237,13 @@
                       cachedDataType="i4"
                       cachedName="ID"
                       externalMetadataColumnId="Package\Import Tables from Access\Import Data into Customer_Mdb.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[ID]" />
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[ID]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Import Data into Customer_Mdb.Inputs[OLE DB Destination Input].Columns[DOB]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="date"
                       cachedName="DOB"
                       externalMetadataColumnId="Package\Import Tables from Access\Import Data into Customer_Mdb.Inputs[OLE DB Destination Input].ExternalColumns[DOB]"
-                      lineageId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output].Columns[DOB]" />
+                      lineageId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output].Columns[DOB]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Import Data into Customer_Mdb.Inputs[OLE DB Destination Input].Columns[Copy of SSN]"
                       cachedCodepage="1252"
@@ -2006,7 +1486,7 @@
                       cachedDataType="i4"
                       cachedName="PharmacyID"
                       externalMetadataColumnId="Package\Import Tables from Access\Import Data into Pharmacy_Mdb.Inputs[OLE DB Destination Input].ExternalColumns[PharmacyID]"
-                      lineageId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output].Columns[PharmacyID]" />
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[PharmacyID]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Import Data into Pharmacy_Mdb.Inputs[OLE DB Destination Input].Columns[Copy of Name]"
                       cachedCodepage="1252"
@@ -2217,13 +1697,13 @@
                       cachedDataType="i4"
                       cachedName="PrescriptionID"
                       externalMetadataColumnId="Package\Import Tables from Access\Import Data into Prescription_Mdb.Inputs[OLE DB Destination Input].ExternalColumns[PrescriptionID]"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[PrescriptionID]" />
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[PrescriptionID]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Import Data into Prescription_Mdb.Inputs[OLE DB Destination Input].Columns[No_of_Refills]"
                       cachedDataType="i2"
                       cachedName="No_of_Refills"
                       externalMetadataColumnId="Package\Import Tables from Access\Import Data into Prescription_Mdb.Inputs[OLE DB Destination Input].ExternalColumns[No_of_Refills]"
-                      lineageId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output].Columns[No_of_Refills]" />
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[No_of_Refills]" />
                     <inputColumn
                       refId="Package\Import Tables from Access\Import Data into Prescription_Mdb.Inputs[OLE DB Destination Input].Columns[Copy of SSN]"
                       cachedCodepage="1252"
@@ -2357,23 +1837,568 @@
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Import Tables from Access\Pharmacy_1"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Pharmacy_1"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Pharmacy</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Tables from Access\Pharmacy_1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Customer 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Customer 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[PharmacyID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[PharmacyID]"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[PharmacyID]"
+                      name="PharmacyID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Store_No]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[Store_No]"
+                      length="10"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Store_No]"
+                      name="Store_No"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Addr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[Addr]"
+                      length="50"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Addr]"
+                      name="Addr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      length="25"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[State]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      length="2"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Zip]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[Zip]"
+                      length="10"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Zip]"
+                      name="Zip"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      length="25"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].Columns[Phone]"
+                      name="Phone"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[PharmacyID]"
+                      dataType="i4"
+                      name="PharmacyID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[Store_No]"
+                      dataType="wstr"
+                      length="10"
+                      name="Store_No" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[Addr]"
+                      dataType="wstr"
+                      length="50"
+                      name="Addr" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="25"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="2"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[Zip]"
+                      dataType="wstr"
+                      length="10"
+                      name="Zip" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="25"
+                      name="Phone" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[PharmacyID]"
+                      dataType="i4"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[PharmacyID]"
+                      name="PharmacyID" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[Store_No]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[Store_No]"
+                      name="Store_No" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[Addr]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[Addr]"
+                      name="Addr" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[City]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[State]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[State]"
+                      name="State" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[Zip]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[Zip]"
+                      name="Zip" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[Phone]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[Phone]"
+                      name="Phone" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Tables from Access\Prescription_1"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Prescription_1"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Prescription</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Tables from Access\Prescription_1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Customer 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Customer 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[PrescriptionID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[PrescriptionID]"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[PrescriptionID]"
+                      name="PrescriptionID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[SSN]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[SSN]"
+                      length="9"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[SSN]"
+                      name="SSN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[PharmacyID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[PharmacyID]"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[PharmacyID]"
+                      name="PharmacyID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Date_Filled]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[Date_Filled]"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Date_Filled]"
+                      name="Date_Filled"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Brand_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[Brand_Name]"
+                      length="50"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Brand_Name]"
+                      name="Brand_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Generic_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[Generic_Name]"
+                      length="50"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Generic_Name]"
+                      name="Generic_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[IsGeneric]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[IsGeneric]"
+                      length="1"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[IsGeneric]"
+                      name="IsGeneric"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Directions]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[Directions]"
+                      length="100"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Directions]"
+                      name="Directions"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Qty]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[Qty]"
+                      length="25"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Qty]"
+                      name="Qty"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[No_of_Refills]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[No_of_Refills]"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[No_of_Refills]"
+                      name="No_of_Refills"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Doctor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[Doctor]"
+                      length="50"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].Columns[Doctor]"
+                      name="Doctor"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[PrescriptionID]"
+                      dataType="i4"
+                      name="PrescriptionID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[SSN]"
+                      dataType="wstr"
+                      length="9"
+                      name="SSN" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[PharmacyID]"
+                      dataType="i4"
+                      name="PharmacyID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[Date_Filled]"
+                      dataType="date"
+                      name="Date_Filled" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[Brand_Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Brand_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[Generic_Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Generic_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[IsGeneric]"
+                      dataType="wstr"
+                      length="1"
+                      name="IsGeneric" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[Directions]"
+                      dataType="wstr"
+                      length="100"
+                      name="Directions" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[Qty]"
+                      dataType="wstr"
+                      length="25"
+                      name="Qty" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[No_of_Refills]"
+                      dataType="i2"
+                      name="No_of_Refills" />
+                    <externalMetadataColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output].ExternalColumns[Doctor]"
+                      dataType="wstr"
+                      length="50"
+                      name="Doctor" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[PrescriptionID]"
+                      dataType="i4"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[PrescriptionID]"
+                      name="PrescriptionID" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[SSN]"
+                      dataType="wstr"
+                      length="9"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[SSN]"
+                      name="SSN" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[PharmacyID]"
+                      dataType="i4"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[PharmacyID]"
+                      name="PharmacyID" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[Date_Filled]"
+                      dataType="date"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[Date_Filled]"
+                      name="Date_Filled" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[Brand_Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[Brand_Name]"
+                      name="Brand_Name" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[Generic_Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[Generic_Name]"
+                      name="Generic_Name" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[IsGeneric]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[IsGeneric]"
+                      name="IsGeneric" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[Directions]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[Directions]"
+                      name="Directions" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[Qty]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[Qty]"
+                      name="Qty" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[No_of_Refills]"
+                      dataType="i2"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[No_of_Refills]"
+                      name="No_of_Refills" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[Doctor]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[Doctor]"
+                      name="Doctor" />
+                    <outputColumn
+                      refId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
-            <path
-              refId="Package\Import Tables from Access.Paths[ADO NET Source Output]"
-              endId="Package\Import Tables from Access\Convert Customer Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input]"
-              name="ADO NET Source Output"
-              startId="Package\Import Tables from Access\Get Customer Table.Outputs[ADO NET Source Output]" />
-            <path
-              refId="Package\Import Tables from Access.Paths[ADO NET Source Output1]"
-              endId="Package\Import Tables from Access\Convert Prescription Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input]"
-              name="ADO NET Source Output"
-              startId="Package\Import Tables from Access\Get Prescription Table.Outputs[ADO NET Source Output]" />
-            <path
-              refId="Package\Import Tables from Access.Paths[ADO NET Source Output2]"
-              endId="Package\Import Tables from Access\Convert Pharmacy Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input]"
-              name="ADO NET Source Output"
-              startId="Package\Import Tables from Access\Get Pharmacy Table.Outputs[ADO NET Source Output]" />
             <path
               refId="Package\Import Tables from Access.Paths[Data Conversion Output]"
               endId="Package\Import Tables from Access\Import Data into Customer_Mdb.Inputs[OLE DB Destination Input]"
@@ -2389,6 +2414,21 @@
               endId="Package\Import Tables from Access\Import Data into Pharmacy_Mdb.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\Import Tables from Access\Convert Pharmacy Fields DT_WSTR to DT_STR.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Import Tables from Access.Paths[OLE DB Source Output]"
+              endId="Package\Import Tables from Access\Convert Customer Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Import Tables from Access\Customer_1.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Import Tables from Access.Paths[OLE DB Source Output1]"
+              endId="Package\Import Tables from Access\Convert Prescription Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Import Tables from Access\Prescription_1.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Import Tables from Access.Paths[OLE DB Source Output2]"
+              endId="Package\Import Tables from Access\Convert Pharmacy Fields DT_WSTR to DT_STR.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Import Tables from Access\Pharmacy_1.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2434,13 +2474,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="158,42"
-          Id="Package\Truncate Tables"
-          TopLeft="324,38" />
-        <NodeLayout
           Size="209,42"
           Id="Package\Import Tables from Access"
           TopLeft="323,113" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Truncate Tables"
+          TopLeft="324,38" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="403,80">
@@ -2484,132 +2524,54 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="214,42"
-          Id="Package\Import Tables from Access\Get Customer Table"
-          TopLeft="113,49" />
-        <NodeLayout
-          Size="188,42"
-          Id="Package\Import Tables from Access\Get Prescription Table"
-          TopLeft="344,48" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Import Tables from Access\Get Pharmacy Table"
-          TopLeft="555,47" />
-        <NodeLayout
-          Size="219,52"
-          Id="Package\Import Tables from Access\Convert Customer Fields DT_WSTR to DT_STR"
-          TopLeft="111,131" />
+          Size="177,42"
+          Id="Package\Import Tables from Access\Import Data into Prescription_Mdb"
+          TopLeft="421,224" />
         <NodeLayout
           Size="185,50"
           Id="Package\Import Tables from Access\Convert Prescription Fields DT_WSTR to DT_STR"
-          TopLeft="345,134" />
+          TopLeft="415,134" />
         <NodeLayout
           Size="178,46"
           Id="Package\Import Tables from Access\Convert Pharmacy Fields DT_WSTR to DT_STR"
-          TopLeft="554,135" />
-        <EdgeLayout
-          Id="Package\Import Tables from Access.Paths[ADO NET Source Output]"
-          TopLeft="220.25,91">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40"
-              Start="0,0"
-              End="0,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Tables from Access.Paths[ADO NET Source Output1]"
-          TopLeft="437.75,90">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44"
-              Start="0,0"
-              End="0,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Tables from Access.Paths[ADO NET Source Output2]"
-          TopLeft="644,89">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46"
-              Start="0,0"
-              End="0,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="217,42"
-          Id="Package\Import Tables from Access\Import Data into Customer_Mdb"
-          TopLeft="112,226" />
-        <EdgeLayout
-          Id="Package\Import Tables from Access.Paths[Data Conversion Output]"
-          TopLeft="220.5,183">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43"
-              Start="0,0"
-              End="0,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Import Tables from Access\Import Data into Prescription_Mdb"
-          TopLeft="351,224" />
+          TopLeft="624,135" />
         <NodeLayout
           Size="186,42"
           Id="Package\Import Tables from Access\Import Data into Pharmacy_Mdb"
-          TopLeft="557,224" />
+          TopLeft="627,224" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Import Tables from Access\Convert Customer Fields DT_WSTR to DT_STR"
+          TopLeft="181,131" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Import Tables from Access\Import Data into Customer_Mdb"
+          TopLeft="182,226" />
+        <EdgeLayout
+          Id="Package\Import Tables from Access.Paths[Data Conversion Output2]"
+          TopLeft="716.5,181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Tables from Access.Paths[Data Conversion Output1]"
-          TopLeft="438.5,184">
+          TopLeft="508.5,184">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2630,19 +2592,121 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Tables from Access.Paths[Data Conversion Output2]"
-          TopLeft="646.5,181">
+          Id="Package\Import Tables from Access.Paths[Data Conversion Output]"
+          TopLeft="273.5,173">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43"
+              EndConnector="17,53"
               Start="0,0"
-              End="0,35.5">
+              End="17,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5" />
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="13,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13,26.5"
+                    Point2="17,26.5"
+                    Point3="17,30.5" />
+                  <mssgle:LineSegment
+                    End="17,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Import Tables from Access\Customer_1"
+          TopLeft="224,24" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Import Tables from Access\Prescription_1"
+          TopLeft="428,28" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Import Tables from Access\Pharmacy_1"
+          TopLeft="649,27" />
+        <EdgeLayout
+          Id="Package\Import Tables from Access.Paths[OLE DB Source Output]"
+          TopLeft="293.5,66">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20,65"
+              Start="0,0"
+              End="-20,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="-4,32.5" />
+                  <mssgle:LineSegment
+                    End="-16,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16,32.5"
+                    Point2="-20,32.5"
+                    Point3="-20,36.5" />
+                  <mssgle:LineSegment
+                    End="-20,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Tables from Access.Paths[OLE DB Source Output1]"
+          TopLeft="505,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64"
+              Start="0,0"
+              End="0,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Tables from Access.Paths[OLE DB Source Output2]"
+          TopLeft="716.25,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2655,26 +2719,28 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Import Tables from Access\Get Customer Table">
+    design-time-name="Package\Import Tables from Access\Import Data into Prescription_Mdb">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import Tables from Access\Get Prescription Table">
-    <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Import Tables from Access\Get Pharmacy Table">
+    design-time-name="Package\Import Tables from Access\Import Data into Pharmacy_Mdb">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -2692,7 +2758,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Import Tables from Access\Import Data into Prescription_Mdb">
+    design-time-name="Package\Import Tables from Access\Customer_1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2705,7 +2771,20 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Import Tables from Access\Import Data into Pharmacy_Mdb">
+    design-time-name="Package\Import Tables from Access\Prescription_1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Tables from Access\Pharmacy_1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

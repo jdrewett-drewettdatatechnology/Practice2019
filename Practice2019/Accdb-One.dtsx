@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{9C3E4C27-8F83-43A0-8D87-268928BAB2E1}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{2D77CC4C-16CC-4B2D-838A-C22895F69053}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,7 @@
       DTS:ObjectName="C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\Customer.accdb.admin">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\Customer.accdb;User ID=admin;Provider=Microsoft.ACE.OLEDB.16.0;" />
+          DTS:ConnectionString="Data Source=C:\Users\jdrewett\Desktop\SSIS\Practice2019\Files\Customer.accdb;User ID=admin;Provider=Microsoft.ACE.OLEDB.12.0;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>

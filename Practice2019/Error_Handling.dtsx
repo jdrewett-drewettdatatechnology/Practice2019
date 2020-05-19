@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{50D8389C-702A-4C9A-9F05-798A977A0FCB}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{6834436E-39EB-4AEF-8F64-16A3A7F6D98C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -87,7 +87,7 @@ VALUES
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{0B1EAF11-78AB-4A49-A072-2D108C7FB587}"
-                  SQLTask:SqlStatementSource="INSERT INTO [SSISDB].[dbo].[ErrorLog]&#xA;(&#xA;&#x9;[PackageName],&#xA;&#x9;[PackageID],&#xA;&#x9;[TaskName],&#xA;&#x9;[ErrorCode],&#xA;&#x9;[ErrorMsg],&#xA;&#x9;[PackageDuration],&#xA;&#x9;[ContainerDuration],&#xA;&#x9;[EmailSubject],&#xA;&#x9;[EmailRecipients]&#xA;)&#xA;VALUES&#xA;('Package1','{AEC9F0F0-743C-4543-847F-1E82A8671204}','',0,'',1366,322,'SSIS Package Error','jdrewett@drewettdatatechnology.com')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  SQLTask:SqlStatementSource="INSERT INTO [SSISDB].[dbo].[ErrorLog]&#xA;(&#xA;&#x9;[PackageName],&#xA;&#x9;[PackageID],&#xA;&#x9;[TaskName],&#xA;&#x9;[ErrorCode],&#xA;&#x9;[ErrorMsg],&#xA;&#x9;[PackageDuration],&#xA;&#x9;[ContainerDuration],&#xA;&#x9;[EmailSubject],&#xA;&#x9;[EmailRecipients]&#xA;)&#xA;VALUES&#xA;('Package1','{AEC9F0F0-743C-4543-847F-1E82A8671204}','',0,'',44,44,'SSIS Package Error','jdrewett@drewettdatatechnology.com')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
               </DTS:ObjectData>
             </DTS:Executable>
           </DTS:Executables>
@@ -158,8 +158,8 @@ VALUES
 ")"</DTS:PropertyExpression>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{2C6637FA-ABC4-4720-8048-89E2517E96C0}"
-              SQLTask:SqlStatementSource="INSERT INTO [SSIS].[dbo].[ErrorLog]&#xA;(&#xA;&#x9;[PackageName],&#xA;&#x9;[PackageID],&#xA;&#x9;[TaskName],&#xA;&#x9;[ErrorCode],&#xA;&#x9;[ErrorMsg],&#xA;&#x9;[PackageDuration],&#xA;&#x9;[ContainerDuration],&#xA;&#x9;[EmailSubject],&#xA;&#x9;[EmailRecipients]&#xA;)&#xA;VALUES&#xA;('Package1','{AEC9F0F0-743C-4543-847F-1E82A8671204}','',0,'',1366,1351,'SSIS Package Error','jdrewett@drewettdatatechnology.com')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:Connection="{0B1EAF11-78AB-4A49-A072-2D108C7FB587}"
+              SQLTask:SqlStatementSource="INSERT INTO [SSIS].[dbo].[ErrorLog]&#xA;(&#xA;&#x9;[PackageName],&#xA;&#x9;[PackageID],&#xA;&#x9;[TaskName],&#xA;&#x9;[ErrorCode],&#xA;&#x9;[ErrorMsg],&#xA;&#x9;[PackageDuration],&#xA;&#x9;[ContainerDuration],&#xA;&#x9;[EmailSubject],&#xA;&#x9;[EmailRecipients]&#xA;)&#xA;VALUES&#xA;('Package1','{AEC9F0F0-743C-4543-847F-1E82A8671204}','',0,'',44,44,'SSIS Package Error','jdrewett@drewettdatatechnology.com')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
